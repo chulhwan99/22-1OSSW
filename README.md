@@ -17,7 +17,7 @@ top 명령어는 현재 OS의 상태를 나타내주는 CLI 어플리케이션�
 
 ` $ top [option]`
 형태로 쓰이고 실행 전 옵션 
- + -b : batch모드
+ + -b : **batch**모드
  + -n : 실행 주기 설정
  + -p : 특정 프로세스 ID 
  
@@ -46,8 +46,7 @@ ps 명령어는 현재 실행중인 프로세스의 목록과 상태를 보여�
 1. Unix Option : 앞에 '-'(dash)가 붙는 옵션 표기방법
 2. BSD Option : '-'를 붙이지 않는다.
 3. GNU Option : 명령어 앞에 '--'(double dash)를 붙인다.
-4. 
-표기법이 다르니 정확하게 알고 사용해야한다.
+표기법이 다르니 **정확하게 알고 사용해야한다.**
 
 실행 전 옵션
 + -e, -A : 모든 프로세스를 보여준다.
@@ -81,14 +80,16 @@ jobs 명령어는 작업의 상태를 표시하는 명령어다. 현재 쉘 세�
 + command : 지정한 명령어를 실행
 
 jobs로 알 수 있는 백그라운드 작업의 상태값
-+ Running : 작업이 계속 진행중 
-+ Done : 작업이 완료되어 0을 반환
-+ Done(code) : 작업이 종료되었으며 0이 아닌 코드를 반환
-+ Stopped : 작업이 일시 중단
-+ Stopped(SIGTSTP) : SIGTSTP 시그널이 작업을 일시 중단
-+ Stopped(SIGSTOP) : SIGSTOP 시그널이 작업을 일시 중단
-+ Stopped(SIGTTIN) : SIGTTIN 시그널이 작업을 일시 중단
-+ Stopped(SIGTTOU) : SIGTTOU 시그널이 작업을 일시 중단
+|옵션|설명|
+|---|---|
+|Running|작업이 계속 진행중|
+|Done|작업이 완료되어 0을 반환|
+|Done(code)|작업이 종료되었으며 0이 아닌 코드를 반환|
+|Stopped|작업이 일시 중단|
+|Stopped(SIGTSTP)|SIGTSTP 시그널이 작업을 일시 중단|
+|Stopped(SIGSTOP)|SIGSTOP 시그널이 작업을 일시 중단|
+|Stopped(SIGTTIN)|SIGTTIN 시그널이 작업을 일시 중단|
+|Stopped(SIGTTOU)|SIGTTOU 시그널이 작업을 일시 중단|
 
 
 ## kill
@@ -103,5 +104,14 @@ kill 명령어는 이름 처럼 프로세스를 죽일 때 사용한다. 강제�
 
 
 
+## 매크로 활용방법
+매크로는 같은 동작을 반복하게 해준다. 잘 활용하면 시간을 많이 단축할 수 있는 유용한 기능이다.
+
+1. 명령모드에서 `q[Name]` Name은 아무 알파벳이나 상관없다.
+2. 반복을 원하는 동작을 녹화한다.
+3. 녹화가 끝나면 q를 눌러 녹화를 종료한다.
+4. @[Name] 으로 매크로를 실행할 수 있다. 
+     -  [Number]@[Name]을 하게 되면 Number만큼 매크로를 실행한다.
+     -  @@ 를 입력하면 방금 실행한 매크로를 실행한다.
 
 
