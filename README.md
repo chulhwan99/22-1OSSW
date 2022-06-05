@@ -89,4 +89,19 @@ jobs로 알 수 있는 백그라운드 작업의 상태값
 + Stopped(SIGSTOP) : SIGSTOP 시그널이 작업을 일시 중단
 + Stopped(SIGTTIN) : SIGTTIN 시그널이 작업을 일시 중단
 + Stopped(SIGTTOU) : SIGTTOU 시그널이 작업을 일시 중단
-+ 
+
+
+## kill
+
+kill 명령어는 이름 처럼 프로세스를 죽일 때 사용한다. 강제로 종료하는 명령어는 아니고 프로세스에 시그널을 보내는명령어다. default 시그널은 TERM(15)다.
+` kill [pid]` 형태로 ps 명령어를 통해 얻은 pid를 kill 명령어의 파라미터로 넘겨 실행시킨다.
+시그널을 바꾸고 싶다면 ` kill -(signal) [pid] `  
+![image](https://user-images.githubusercontent.com/97331187/172031572-32b840b7-81e2-4341-a92d-831e8553a4d5.png)
+`kill -l` 로 시그널의 리스트를 출력한 모습이다.
+
+되도록 9번 시그널 SIGKILL은 사용하지 않는 것이 좋다. SIGTERM의 경우 종료 시그널에 대해 시그널 핸들러를 등록하여 처리 중이던 데이터를 안전하게 정리/보관하는데, SIGKILL은 프로세스를 강제로 종료하는 방식이기 때문이다.
+
+
+
+
+
